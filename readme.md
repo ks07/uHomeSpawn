@@ -7,5 +7,6 @@ No release of uHome is currently compatible with this plugin - you must build fr
 This plugin allows your players to teleport to a centralised 'spawn', while still obeying restrictions put in place with uHome - i.e. warmups and cooldowns.
 
 Commands & Permissions:
+
     /spawn - (uhome.spawn) - Takes you to the current world's spawn.
     /setspawn - (uhome.setspawn) - Sets the world's spawn to your position.
