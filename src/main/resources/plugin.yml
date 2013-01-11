@@ -1,0 +1,27 @@
+name: uHomeSpawn
+version: 0.1
+description: Provides spawn and setspawn capability backed by uHome.
+author: ks07
+main: uk.co.ks07.uhome.uHomeSpawn
+website: http://www.ultimateminecraft.net/
+depend: [uHome]
+commands:
+  spawn:
+    description: Teleports you to the current world's spawn.
+    usage: /<command> - Sends you to the current world's spawn.
+    aliases: uhspawn
+    permission: uhome.spawn
+    permission-message: You don't have permission to use /spawn!
+  setspawn:
+    description: Sets the uHomeSpawn spawn point to your location.
+    usage: /<command> - Sets the current world's spawn to your location.
+    aliases: uhsetspawn
+    permission: uhome.setspawn
+    permission-message: You don't have permission to use /setspawn!
+permissions:
+  uhome.spawn:
+    description: Allows you to warp to spawn points.
+    default: true
+  uhome.setspawn:
+    description: Allows you to set spawn points.
+    default: op
