@@ -31,15 +31,19 @@ public class uHomeSpawn extends JavaPlugin implements CommandExecutor {
         }
     }
     
+    private static String makeHiddenName(String name) {
+        return "**" + name + "**";
+    }
+    
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             
             if ("spawn".equals(commandLabel)) {
-                this.uh.getHomeList().warpToExact(spawnPlayer, player.getWorld().getName(), player, this);
+                this.uh.getHomeList().warpToExact(spawnPlayer, makeHiddenName(player.getWorld().getName()), player, this);
             } else if ("setspawn".equals(commandLabel)) {
-                this.uh.getHomeList().adminAddHome(player.getLocation(), spawnPlayer, player.getWorld().getName(), this.getLogger());
+                this.uh.getHomeList().adminAddHome(player.getLocation(), spawnPlayer, makeHiddenName(player.getWorld().getName()), this.getLogger());
                 if (!this.uh.getHomeList().toggleHomeLock(spawnPlayer, player.getWorld().getName())) {
                     this.uh.getHomeList().toggleHomeLock(spawnPlayer, player.getWorld().getName());
                 }
