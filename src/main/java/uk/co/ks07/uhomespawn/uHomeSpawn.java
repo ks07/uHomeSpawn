@@ -41,12 +41,14 @@ public class uHomeSpawn extends JavaPlugin implements CommandExecutor {
             Player player = (Player) sender;
             
             if ("spawn".equals(commandLabel)) {
+                player.sendMessage("Teleporting you to spawn...");
                 this.uh.getHomeList().warpToExact(spawnPlayer, makeHiddenName(player.getWorld().getName()), player, this);
             } else if ("setspawn".equals(commandLabel)) {
                 this.uh.getHomeList().adminAddHome(player.getLocation(), spawnPlayer, makeHiddenName(player.getWorld().getName()), this.getLogger());
                 if (!this.uh.getHomeList().toggleHomeLock(spawnPlayer, player.getWorld().getName())) {
                     this.uh.getHomeList().toggleHomeLock(spawnPlayer, player.getWorld().getName());
                 }
+                player.sendMessage("Spawn for this world has been set!");
             }
         } else {
             sender.sendMessage("You must be in-game to use this command!");
