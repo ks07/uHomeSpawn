@@ -2,7 +2,7 @@ name: uHomeSpawn
 version: 0.1
 description: Provides spawn and setspawn capability backed by uHome.
 author: ks07
-main: uk.co.ks07.uhome.uHomeSpawn
+main: uk.co.ks07.uhomespawn.uHomeSpawn
 website: http://www.ultimateminecraft.net/
 depend: [uHome]
 commands:
